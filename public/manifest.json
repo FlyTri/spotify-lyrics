@@ -7,12 +7,13 @@
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#000",
-  "theme_color": "#000",
+  "theme_color": "#00ff59",
   "icons": [
     {
-      "src": "/favicon.ico",
-      "sizes": "any",
-      "type": "image/x-icon"
+      "src": "icons/icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
     }
   ]
 }

@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+"use client";
 
 export default function Test() {
   return <h1>Test</h1>;
