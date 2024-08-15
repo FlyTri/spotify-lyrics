@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+import Loading from "@/components/Loading";
+
+import "@/styles/global.css";
 
 export const metadata: Metadata = {
   title: "Spotly",
@@ -14,7 +17,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="vi">
-      <body>{children}</body>
+      <body
+        style={{
+          color: "var(--text-color)",
+          backgroundColor: "var(--background-color)",
+          margin: 0,
+          padding: 0,
+          userSelect: "none",
+        }}
+      >
+        <Loading />
+        {children}
+      </body>
     </html>
   );
 }

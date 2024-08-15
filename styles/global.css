@@ -1,0 +1,25 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  --green: #00ff59;
+  --button-dim: #1aa34a;
+  --discord-color: #2b2d31;
+  --text-color: #c6d0f5;
+
+  --background-color: #4c4f69;
+  --highlight-color: 255, 255, 255;
+  --lyrics-color: rgba(255, 255, 255, 0.3);
+  --roma-color: rgba(255, 255, 255, 0.35);
+}
+
+.dot {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  margin: 5px;
+  padding: 0 !important;
+}
