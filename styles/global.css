@@ -15,6 +15,30 @@ body {
   --roma-color: rgba(255, 255, 255, 0.35);
 }
 
+@font-face {
+  font-family: "SpotifyMix";
+  src: url("/fonts/SpotifyMix-Regular.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SpotifyMix-Medium";
+  src: url("/fonts/SpotifyMix-Medium.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SpotifyMix-Bold";
+  src: url("/fonts/SpotifyMix-Bold.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SFProText";
+  src: url("/fonts/SFProText-Regular.otf") format("opentype");
+  font-display: swap;
+}
+
 .dot {
   display: inline-block;
   width: 1rem;
