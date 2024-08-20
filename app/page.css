@@ -1,0 +1,247 @@
+.loading-status {
+  font-family: "SpotifyMix", system-ui;
+  font-size: 20px;
+  margin-top: 20px;
+  color: var(--text-color);
+}
+
+.sticky-header {
+  position: fixed;
+  top: 0;
+  text-align: center;
+  z-index: 1;
+  width: 100%;
+  height: 65px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.progress-bar {
+  height: 3px;
+  background-color: rgba(255, 255, 255, 0.75);
+  width: 0;
+  border-radius: 3px;
+  transition: width 0.5s linear;
+}
+
+.title,
+.artists {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.title {
+  font-size: 15px;
+  font-family: "SpotifyMix-Bold", system-ui;
+  margin: 12px 30px 0 30px;
+}
+
+.artists {
+  font-size: 13px;
+  margin: 3px 85px 12px 85px;
+}
+
+.content-container {
+  position: fixed;
+  top: 65px;
+  width: 100%;
+  max-height: calc(100% - (65px + 53px));
+  overflow: hidden scroll;
+}
+
+.content {
+  font-family: "SpotifyMix-Bold", system-ui;
+  font-weight: 700;
+  font-size: 35px;
+  color: transparent;
+  clear: both;
+
+  margin: 0 10px 0 10px;
+}
+
+[class^="index-"] {
+  display: inline-block;
+}
+
+[class^="index-"]:not(.no-space):not(:has(.dot)) {
+  margin-right: 0.3ch;
+}
+
+p.roma {
+  font-family: "SpotifyMix", system-ui;
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--roma-color);
+}
+
+.highlight {
+  background-clip: text;
+  background-size: 220% 100%;
+  background-position: 0% 0%;
+  background-image: linear-gradient(
+    90deg,
+    rgba(var(--highlight-color), 0.75) 50%,
+    transparent calc(50% + 7.5px)
+  );
+  animation: text var(--duration) linear;
+}
+
+@keyframes text {
+  0% {
+    color: transparent;
+    background-position: 100% 0%;
+  }
+  100% {
+    color: transparent;
+    background-position: 0% 0%;
+  }
+}
+
+p.active:has(.highlight) .roma,
+p.highlight .roma {
+  color: rgba(var(--highlight-color), 0.75);
+}
+
+/* p.highlight,
+  span.highlight,
+  p.status {
+    color: rgba(var(--highlight-color), 0.75) !important;
+  } */
+
+p.status {
+  color: rgba(var(--highlight-color), 0.75) !important;
+}
+
+.content .emoji {
+  margin-right: 5px;
+}
+
+.highlight .dot {
+  opacity: 0.2;
+  background-color: rgba(var(--highlight-color), 0.75) !important;
+}
+
+span:has(span.dot) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+:is(p.highlight, span.highlight):has(span.dot) {
+  animation: zoom-out 5s infinite;
+}
+
+@keyframes zoom-out {
+  50% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.dot.active {
+  animation: visible var(--dot-delay) linear forwards;
+}
+
+@keyframes visible {
+  to {
+    opacity: 1;
+  }
+}
+
+.lyrics {
+  padding: 7px 0;
+  margin-bottom: 14px;
+}
+
+.lyrics:not(:has(.dot, .source)) {
+  cursor: pointer;
+  user-select: text;
+}
+
+.lyrics:nth-child(1) {
+  margin-top: 10px;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+.content p {
+  margin: 0;
+  text-align: center;
+}
+
+.source {
+  font-family: "SpotifyMix", system-ui;
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--text-color);
+  margin: 80px 0 10px 0 !important;
+  text-align: center !important;
+}
+
+.bottom-container {
+  position: fixed;
+  width: 100%;
+  height: 30px;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.25);
+  padding: 13px 0 10px 0;
+  z-index: 2;
+}
+
+.bottom {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  justify-content: center;
+  padding: inherit;
+  z-index: 3;
+}
+
+.control-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--green);
+  color: #000;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 0 7px;
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.count-container {
+  width: 70px;
+  text-align: center;
+}
+
+.count {
+  font-size: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .content {
+    font-size: 30px;
+  }
+  p.roma {
+    font-size: 20px;
+  }
+}

@@ -12,7 +12,7 @@ export default function Loading() {
     loaded.current = true;
 
     const screen = document.querySelector(".loader-screen")!;
-    const load = () => screen!.remove();
+    const load = () => screen.remove();
 
     if (screen) {
       if (document.readyState === "complete") load();
@@ -37,7 +37,7 @@ export default function Loading() {
         alignItems: "center",
       }}
     >
-      <div className="dots" style={{ animation: "load 5s infinite" }}>
+      <div className="dots">
         <div className="dot"></div>
         <div className="dot"></div>
         <div className="dot"></div>

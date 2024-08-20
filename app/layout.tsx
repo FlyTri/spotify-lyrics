@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+
 import Loading from "@/components/Loading";
 
 import "@/styles/global.css";
+import ButtonAnimation from "@/components/ButtonAnimation";
 
 export const metadata: Metadata = {
   title: "Spotly",
@@ -19,6 +21,7 @@ export default function RootLayout({
     <html lang="vi">
       <body
         style={{
+          fontFamily: "SpotifyMix, system-ui",
           color: "var(--text-color)",
           backgroundColor: "var(--background-color)",
           margin: 0,
@@ -27,6 +30,7 @@ export default function RootLayout({
         }}
       >
         <Loading />
+        <ButtonAnimation />
         {children}
       </body>
     </html>

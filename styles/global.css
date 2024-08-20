@@ -15,6 +15,15 @@ body {
   --roma-color: rgba(255, 255, 255, 0.35);
 }
 
+* {
+  transition: all 0.2s linear;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
 @font-face {
   font-family: "SpotifyMix";
   src: url("/fonts/SpotifyMix-Regular.woff") format("woff");
@@ -46,4 +55,35 @@ body {
   border-radius: 50%;
   margin: 5px;
   padding: 0 !important;
+}
+
+.clicked {
+  animation: pop 0.3s;
+}
+
+@keyframes pop {
+  60% {
+    transform: scale(0.9);
+    background-color: var(--button-dim);
+  }
+  80% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (pointer: coarse) {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+  }
 }
